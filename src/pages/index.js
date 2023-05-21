@@ -1,11 +1,25 @@
+import React, { useState, useContext, useEffect } from "react";
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+
+import { getMonth } from '../utils'
+import CalendarHeader from '../components/CalendarHeader'
+import Sidebar from "../components/Sidebar";
+import Month from "../components/Month";
+import GlobalContext from "../context/GlobalContext";
+import EventModal from "../components/EventModal";
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const [currentMonth, setCurrentMonth] = useState(getMonth());
+  const { monthIndex, showEventModal } = useContext(GlobalContext);
+
+  useEffect(() => {
+    setCurrentMonth(getMonth(monthIndex));
+  }, [monthIndex]);
+
   return (
     <>
       <Head>
@@ -14,11 +28,16 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
-        <h1 className="text-3xl font-bold underline">
-          Hello world!
-        </h1>
-      </main>
+      <>
+        {showEventModal && <EventModal />}
+        <div className="h-screen flex flex-col">
+          <CalendarHeader />
+          <div className="flex flex-1">
+            <Sidebar />
+            <Month month={currentMonth} />
+          </div>
+        </div>
+      </>
     </>
   )
 }
