@@ -1,24 +1,20 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect } from 'react'
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
 
 import { getMonth } from '../utils'
 import CalendarHeader from '../components/CalendarHeader'
-import Sidebar from "../components/Sidebar";
-import Month from "../components/Month";
-import GlobalContext from "../context/GlobalContext";
-import EventModal from "../components/EventModal";
+import Sidebar from '../components/Sidebar'
+import Month from '../components/Month'
+import GlobalContext from '../context/GlobalContext'
+import EventModal from '../components/EventModal'
 
-const inter = Inter({ subsets: ['latin'] })
-
-export default function Home() {
-  const [currentMonth, setCurrentMonth] = useState(getMonth());
-  const { monthIndex, showEventModal } = useContext(GlobalContext);
+const Home = () => {
+  const [currentMonth, setCurrentMonth] = useState(getMonth())
+  const { monthIndex, showEventModal } = useContext(GlobalContext)
 
   useEffect(() => {
-    setCurrentMonth(getMonth(monthIndex));
-  }, [monthIndex]);
+    setCurrentMonth(getMonth(monthIndex))
+  }, [monthIndex])
 
   return (
     <>
@@ -41,3 +37,5 @@ export default function Home() {
     </>
   )
 }
+
+export default Home

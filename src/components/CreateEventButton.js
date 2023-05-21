@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext } from 'react'
 import Image from 'next/image'
 
 import plusImg from '../assets/plus.svg'
 import GlobalContext from '../context/GlobalContext'
 
 const CreateEventButton = () => {
-  const { setShowEventModal } = useContext(GlobalContext);
+  const { setShowEventModal } = useContext(GlobalContext)
   
   return (
     <button
@@ -19,7 +19,7 @@ const CreateEventButton = () => {
       />
       <span className="pl-3 pr-7"> Create</span>
     </button>
-  );
+  )
 }
 
 export default CreateEventButton

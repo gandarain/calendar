@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react'
 
 const GlobalContext = React.createContext({
   monthIndex: 0,
-  setMonthIndex: (index) => {},
+  setMonthIndex: () => {},
   smallCalendarMonth: 0,
-  setSmallCalendarMonth: (index) => {},
+  setSmallCalendarMonth: () => {},
   daySelected: null,
-  setDaySelected: (day) => {},
+  setDaySelected: () => {},
   showEventModal: false,
   setShowEventModal: () => {},
-  dispatchCalEvent: ({ type, payload }) => {},
+  dispatchCalEvent: ({}) => {},
   savedEvents: [],
   selectedEvent: null,
   setSelectedEvent: () => {},
@@ -17,6 +17,6 @@ const GlobalContext = React.createContext({
   labels: [],
   updateLabel: () => {},
   filteredEvents: [],
-});
+})
 
-export default GlobalContext;
+export default GlobalContext

@@ -1,15 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState } from 'react'
 
-import GlobalContext from "../context/GlobalContext";
+import GlobalContext from '../context/GlobalContext'
 
 const labelsClasses = [
-  "indigo",
-  "gray",
-  "green",
-  "blue",
-  "red",
-  "purple",
-];
+  'indigo',
+  'gray',
+  'green',
+  'blue',
+  'red',
+  'purple',
+]
 
 const EventModal = () => {
   const {
@@ -17,24 +17,24 @@ const EventModal = () => {
     daySelected,
     dispatchCalEvent,
     selectedEvent,
-  } = useContext(GlobalContext);
+  } = useContext(GlobalContext)
 
   const [title, setTitle] = useState(
-    selectedEvent ? selectedEvent.title : ""
-  );
+    selectedEvent ? selectedEvent.title : ''
+  )
 
   const [description, setDescription] = useState(
-    selectedEvent ? selectedEvent.description : ""
-  );
+    selectedEvent ? selectedEvent.description : ''
+  )
 
   const [selectedLabel, setSelectedLabel] = useState(
     selectedEvent
       ? labelsClasses.find((lbl) => lbl === selectedEvent.label)
       : labelsClasses[0]
-  );
+  )
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     const calendarEvent = {
       title,
@@ -42,15 +42,15 @@ const EventModal = () => {
       label: selectedLabel,
       day: daySelected.valueOf(),
       id: selectedEvent ? selectedEvent.id : Date.now(),
-    };
-
-    if (selectedEvent) {
-      dispatchCalEvent({ type: "update", payload: calendarEvent });
-    } else {
-      dispatchCalEvent({ type: "push", payload: calendarEvent });
     }
 
-    setShowEventModal(false);
+    if (selectedEvent) {
+      dispatchCalEvent({ type: 'update', payload: calendarEvent })
+    } else {
+      dispatchCalEvent({ type: 'push', payload: calendarEvent })
+    }
+
+    setShowEventModal(false)
   }
 
   return (
@@ -65,10 +65,10 @@ const EventModal = () => {
               <span
                 onClick={() => {
                   dispatchCalEvent({
-                    type: "delete",
+                    type: 'delete',
                     payload: selectedEvent,
-                  });
-                  setShowEventModal(false);
+                  })
+                  setShowEventModal(false)
                 }}
                 className="material-icons-outlined text-gray-400 cursor-pointer"
               >
@@ -97,7 +97,7 @@ const EventModal = () => {
             <span className="material-icons-outlined text-gray-400">
               schedule
             </span>
-            <p className="text-gray-600">{daySelected.format("dddd, MMMM DD")}</p>
+            <p className="text-gray-600">{daySelected.format('dddd, MMMM DD')}</p>
             <span className="material-icons-outlined text-gray-400">
               segment
             </span>
@@ -141,7 +141,7 @@ const EventModal = () => {
         </footer>
       </form>
     </div>
-  );
+  )
 }
 
 export default EventModal

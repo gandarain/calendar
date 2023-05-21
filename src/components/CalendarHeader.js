@@ -1,19 +1,19 @@
-import dayjs from "dayjs";
-import React, { useContext } from "react";
+import dayjs from 'dayjs'
+import React, { useContext } from 'react'
 import Image from 'next/image'
 
 import logo from '../assets/logo.png'
-import GlobalContext from "../context/GlobalContext";
+import GlobalContext from '../context/GlobalContext'
 
 const CalendarHeader = () => {
-  const { monthIndex, setMonthIndex } = useContext(GlobalContext);
+  const { monthIndex, setMonthIndex } = useContext(GlobalContext)
 
   const handlePrevMonth = () => {
-    setMonthIndex(monthIndex - 1);
+    setMonthIndex(monthIndex - 1)
   }
 
   const handleNextMonth = () => {
-    setMonthIndex(monthIndex + 1);
+    setMonthIndex(monthIndex + 1)
   }
 
   const handleReset = () => {
@@ -21,7 +21,7 @@ const CalendarHeader = () => {
       monthIndex === dayjs().month()
         ? monthIndex + Math.random()
         : dayjs().month()
-    );
+    )
   }
 
   return (
@@ -52,11 +52,11 @@ const CalendarHeader = () => {
       </button>
       <h2 className="ml-4 text-xl text-gray-500 font-bold">
         {dayjs(new Date(dayjs().year(), monthIndex)).format(
-          "MMMM YYYY"
+          'MMMM YYYY'
         )}
       </h2>
     </header>
-  );
+  )
 }
 
 export default CalendarHeader

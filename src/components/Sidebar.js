@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react'
 
-import CreateEventButton from "./CreateEventButton";
-import SmallCalendar from "./SmallCalendar";
-import Labels from "./Labels";
+import CreateEventButton from './CreateEventButton'
+import SmallCalendar from './SmallCalendar'
+import Labels from './Labels'
 
 const Sidebar = () => (
   <aside className="border p-5 w-64">

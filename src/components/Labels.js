@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext } from 'react'
 
-import GlobalContext from "../context/GlobalContext";
+import GlobalContext from '../context/GlobalContext'
 
 const Labels = () => {
-  const { labels, updateLabel } = useContext(GlobalContext);
+  const { labels, updateLabel } = useContext(GlobalContext)
 
   return (
     <React.Fragment>
@@ -22,7 +22,7 @@ const Labels = () => {
         </label>
       ))}
     </React.Fragment>
-  );
+  )
 }
 
 export default Labels

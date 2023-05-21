@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
 
-import Day from "./Day";
+import Day from './Day'
 
 const Month = ({ month }) => (
   <div className="flex-1 grid grid-cols-7 grid-rows-5">
