@@ -1,22 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 
 const labelsClasses = [
-  "indigo",
-  "gray",
-  "green",
-  "blue",
-  "red",
-  "purple",
-];
+  'indigo',
+  'gray',
+  'green',
+  'blue',
+  'red',
+  'purple',
+]
 
 module.exports = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
  
     // Or if using `src` directory:
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   safelist: [
     ...labelsClasses.map((lbl) => `bg-${lbl}-500`),
@@ -26,10 +26,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Open Sans"]
+        sans: ['Open Sans']
       },
       gridTemplateColumns: {
-        "1/5": "1fr 5fr"
+        '1/5': '1fr 5fr'
       }
     },
   },

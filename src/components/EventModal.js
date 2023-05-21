@@ -97,7 +97,7 @@ const EventModal = () => {
             <span className="material-icons-outlined text-gray-400">
               schedule
             </span>
-            <p className="text-gray-600">{daySelected.format('dddd, MMMM DD')}</p>
+            <p className="ml-2 text-gray-600">{daySelected.format('dddd, MMMM DD')}</p>
             <span className="material-icons-outlined text-gray-400">
               segment
             </span>
