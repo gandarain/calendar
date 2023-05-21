@@ -1,5 +1,9 @@
 ## Calendar
 
+### Libraries
+- tailwind
+- dayjs
+
 ### How to run
 npm version `9.6.4`<br/>
 node version `v20.0.0`
